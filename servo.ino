@@ -29,3 +29,32 @@ void loop() {
     delay(15);                       // waits 15 ms for the servo to reach the position
   }
 }
+
+//----------------------------------------------------------------------------------------------
+
+#include <Servo.h> 
+
+Servo myservo;
+
+int pos = 120;
+
+void setup() 
+{ 
+  Serial.begin(115200);// initialize Serial port
+  myservo.attach(9, 600, 2400);
+  myservo.write(70);  // set servo to mid-point
+  // pinMode(8, INPUT);
+  // digitalWrite(8, HIGH);
+    
+} 
+
+void loop() {
+  
+  Serial.println(myservo.readMicroseconds());
+  delay(50);
+  // for (pos = 60; pos <= 120; pos += 1) { // goes from 0 degrees to 180 degrees
+  //   // in steps of 1 degree
+  //   myservo.write(pos);              // tell servo to go to position in variable 'pos'
+  //   delay(15);                       // waits 15 ms for the servo to reach the position
+  // }
+} 
